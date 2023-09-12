@@ -2,7 +2,7 @@
 ## Data Processed in SQLite
 ## SQLite Data-Cleaning History below:
 
-# Creating A Table for Cyclistic Data from Jan to Mar 2021
+-- Creating A Table for Cyclistic Data from Jan to Mar 2021
 
 CREATE TABLE JanToMar AS
 
@@ -15,7 +15,7 @@ UNION
 SELECT *
 FROM March
 
-# Creating A Table for Cyclistic Data from Apr to Jun 2021
+-- Creating A Table for Cyclistic Data from Apr to Jun 2021
 
 CREATE TABLE AprToJun AS
 
@@ -28,7 +28,7 @@ UNION
 SELECT *
 FROM June
 
-# Creating a Combined Table for Cyclistic Data from Jan to June 2021
+-- Creating a Combined Table for Cyclistic Data from Jan to June 2021
 
 CREATE TABLE JanToJun AS
 
@@ -38,7 +38,7 @@ UNION
 SELECT *
 FROM AprToJun
 
-# Calculating the Total Amount of Rides taken by each Type of Rider: Casual and Member During the 6-Month Period
+-- Calculating the Total Amount of Rides taken by each Type of Rider: Casual and Member During the 6-Month Period
 
 SELECT
 member_casual AS Casual_Or_Member,
@@ -49,7 +49,7 @@ FROM JanToJun
 GROUP BY
 member_casual
 
-# Calculating the Total Amount of Rides Taken per Day - 1=Sunday, 7=Saturday
+-- Calculating the Total Amount of Rides Taken per Day - 1=Sunday, 7=Saturday
 
 SELECT
 count(ride_id) AS Total_Rides_Taken_on_Day
@@ -60,7 +60,7 @@ JanToJun
 GROUP BY
 day_of_week
 
-# Ordering Days by Amount of Bikes Ridden 
+-- Ordering Days by Amount of Bikes Ridden 
 
 SELECT
 CASE
@@ -83,7 +83,7 @@ Day
 ORDER BY
 Total_Trips DESC
 
-# Categorizing Each Day by Amount of Rides and by Type of Rider
+-- Categorizing Each Day by Amount of Rides and by Type of Rider
 
 SELECT
 CASE
@@ -104,7 +104,7 @@ GROUP BY
 day_of_week,
 Type_of_Rider
 
-# Calculating Average Ride Length by Day
+-- Calculating Average Ride Length by Day
 
 SELECT
 CASE
@@ -124,7 +124,7 @@ JanToJun
 GROUP BY
 Day
 
-# Determining the Day with the highest Average Bike Ride Length
+-- Determining the Day with the highest Average Bike Ride Length
 
 SELECT
 CASE
@@ -147,7 +147,7 @@ Day
 ORDER BY
 average_ride_length DESC
 
-# Ordering Days of the Week by Total Bike Length Time per Day 
+-- Ordering Days of the Week by Total Bike Length Time per Day 
 
 SELECT
 CASE
@@ -170,7 +170,7 @@ Day
 ORDER BY
 Total_Ride_Length DESC
 
-# Ordering Days of the Week by Number of Trips Taken by Riders
+-- Ordering Days of the Week by Number of Trips Taken by Riders
 
 SELECT
 CASE
@@ -193,7 +193,7 @@ Day
 ORDER BY
 Total_Trips DESC
 
-# Determining the most-used Type of Bike for the past 6 Months
+-- Determining the most-used Type of Bike for the past 6 Months
 
 SELECT 
 rideable_type AS Type_of_Bike,
@@ -207,7 +207,7 @@ rideable_type
 ORDER BY
 Total_Bike_Usage DESC
 
-# Arranging Type of Bike Used by Type of Member
+-- Arranging Type of Bike Used by Type of Member
 
 SELECT
 rideable_type AS Type_of_Bike,
@@ -224,7 +224,7 @@ member_casual
 ORDER BY
 Total_Bike_Usage DESC
 
-# Determining the most Popular Starting Locations for Each Bike Type for Annual Members
+-- Determining the most Popular Starting Locations for Each Bike Type for Annual Members
 
 SELECT
 start_station_name AS starting_location,
@@ -291,7 +291,7 @@ total_rides_started DESC
 
 LIMIT 3
 
-# Determining the most Popular Starting Locations for Each Bike Type for Casual Members
+-- Determining the most Popular Starting Locations for Each Bike Type for Casual Members
 
 SELECT
 start_station_name AS starting_location,
@@ -356,9 +356,9 @@ start_station_name
 ORDER BY
 total_rides_started DESC 
 
-LIMIT 3
+LIMIT 5
 
-# Determining the most Popular Ending Locations for Each Bike Type for Annual Members
+-- Determining the most Popular Ending Locations for Each Bike Type for Annual Members
 
 SELECT
 end_station_name AS ending_location,
@@ -425,7 +425,7 @@ total_rides_ended DESC
 
 LIMIT 5
 
-# Determining the most Popular Ending Locations for Each Bike Type for Casual Members
+-- Determining the most Popular Ending Locations for Each Bike Type for Casual Members
 
 SELECT
 end_station_name AS ending_location,
