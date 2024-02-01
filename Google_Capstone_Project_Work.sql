@@ -1,8 +1,10 @@
-### My First Main SQL Project - Completing the Google Capstone Project on Cyclistic Rides Data
+/***********************************************
+** My First Main SQL Project - Completing the Google Capstone Project on Cyclistic Rides Data
+***********************************************/
 
-## Google Data Analytics Capstone Project SQL Code
-## Data Processed in SQLite
-## SQLite Data-Cleaning History below:
+-- Google Data Analytics Capstone Project SQL Code
+-- Data Processed in SQLite
+-- Data-Cleaning History below:
 
 -- Creating A Table for Cyclistic Data from Jan to Mar 2021
 
